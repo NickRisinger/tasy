@@ -10,10 +10,14 @@
 		"preview": "vite preview",
 		"prepare": "husky"
 	},
-	"husky": {
-		"hooks": {
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './commitlint.config.js'"
-		}
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx}": [
+			"eslint --max-warnings=0",
+			"prettier --write"
+		],
+		"**/*.{html,json,css,scss,md,mdx}": [
+			"prettier -w"
+		]
 	},
 	"dependencies": {
 		"react": "^18.2.0",
@@ -31,6 +35,7 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-react-refresh": "^0.4.6",
 		"husky": "^9.0.11",
+		"lint-staged": "^15.2.7",
 		"prettier": "^3.3.2",
 		"typescript": "^5.2.2",
 		"vite": "^5.2.0"
