@@ -1,0 +1,46 @@
+@mixin respond-to($breakpoint) {
+	@if $breakpoint == small {
+		@media (max-width: 600px) {
+			@content;
+		}
+	} @else if $breakpoint == medium {
+		@media (max-width: 768px) {
+			@content;
+		}
+	} @else if $breakpoint == large {
+		@media (max-width: 992px) {
+			@content;
+		}
+	} @else if $breakpoint == xlarge {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	}
+}
+
+.main {
+	display: flex;
+	justify-content: space-between;
+	height: 100vh;
+	background-color: #3b82f6;
+
+	@include respond-to(medium) {
+		flex-direction: column;
+	}
+}
+
+.side {
+	background-color: white;
+	height: 100%;
+	width: 50%;
+	border-radius: 25px 0px 0px 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include respond-to(medium) {
+		border-radius: 25px 25px 0px 0px;
+		height: 50%;
+		width: 100%;
+	}
+}
