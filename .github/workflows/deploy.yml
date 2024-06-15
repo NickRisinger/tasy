@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build:
-    environment:
+    env:
       STAGE: prod
     runs-on: ubuntu-latest
     steps:
