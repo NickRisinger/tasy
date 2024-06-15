@@ -19,6 +19,8 @@ concurrency:
 
 jobs:
   build:
+    environment:
+      STAGE: prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
